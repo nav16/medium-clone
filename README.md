@@ -1,10 +1,11 @@
 <h1>Medium-Clone</h1>
 
 This is a clone/copy of medium.com
-
-<h4>Demo:</h4> http://blog.iteching.info
-
 It gives the medium's some functionality in dirty way.
+
+
+<b>Demo:</b> http://blog.iteching.info
+
 
 <h4>The repos used:</h4>
 <b>Inline Editor:</b> https://github.com/daviferreira/medium-editor
@@ -20,4 +21,4 @@ It gives the medium's some functionality in dirty way.
 <h4>License</h4>
 
 Do what you want to do!<br>
-Fork/ Download have fun.
+Fork/ Download have fun.<br>
