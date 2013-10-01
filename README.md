@@ -2,6 +2,8 @@
 
 This is a clone/copy of medium.com
 
+<h4>Demo:</h4> http://blog.iteching.info
+
 It gives the medium's some functionality in dirty way.
 
 <h4>The repos used:</h4>
