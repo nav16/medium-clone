@@ -1,19 +1,33 @@
-This is a clone/copy of medium.com
+# Medium-Clone
+
+This is a clone/copy of [medium.com](https://medium.com).
 
 It gives the medium's some functionality in dirty way.
 
-The repos used:
-Inline Editor: https://github.com/daviferreira/medium-editor
+__demo__: [http://blog.iteching.info](http://blog.iteching.info)
 
-Placeholder: https://github.com/sprucemedia/jQuery.divPlaceholder.js
+## Features
 
-Design: Copied from Medium (to save time)
+__The repos used:__
 
+__Inline Editor:__ https://github.com/daviferreira/medium-editor
 
-Time into project I guess its around 24 - 48 hrs mainly took time to copy the design.
+![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/post.jpg)
+![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/post-edit.jpg)
 
+__Placeholder:__ https://github.com/sprucemedia/jQuery.divPlaceholder.js
 
-License
+![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/new-post.jpg)
+![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/new-post-placeholder.jpg)
+
+__Design:__ Copied from Medium (to save time)
+__Time__ into project I guess its around 24 - 48 hrs mainly took time to copy the design.
+
+## Some More
+
+![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/profile.jpg)
+![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/profile-edit.jpg)
+
+## License
 
 Do what you want to do!
-Fork/ Download have fun.
