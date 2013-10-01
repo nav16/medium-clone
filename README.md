@@ -1,19 +1,21 @@
+<h1>Medium-Clone</h1>
+
 This is a clone/copy of medium.com
 
 It gives the medium's some functionality in dirty way.
 
-The repos used:
-Inline Editor: https://github.com/daviferreira/medium-editor
+<h4>The repos used:</h4>
+<b>Inline Editor:</b> https://github.com/daviferreira/medium-editor
 
-Placeholder: https://github.com/sprucemedia/jQuery.divPlaceholder.js
+<b>Placeholder:</b> https://github.com/sprucemedia/jQuery.divPlaceholder.js
 
-Design: Copied from Medium (to save time)
-
-
-Time into project I guess its around 24 - 48 hrs mainly took time to copy the design.
+<b>Design:</b> Copied from Medium (to save time)
 
 
-License
+<b>Time</b> into project I guess its around 24 - 48 hrs mainly took time to copy the design.
 
-Do what you want to do!
+
+<h4>License</h4>
+
+Do what you want to do!<br>
 Fork/ Download have fun.
