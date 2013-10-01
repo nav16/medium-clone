@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /medium
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^post/(.*)$ posts.php?id=$1 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)$ profile.php?username=$1 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/$ profile.php?username=$1 [L]
+</IfModule>
+
