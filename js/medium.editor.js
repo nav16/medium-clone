@@ -1,5 +1,3 @@
-/*global console*/
-
 function MediumEditor(elements, options) {
     'use strict';
     return this.init(elements, options);
@@ -78,6 +76,7 @@ function MediumEditor(elements, options) {
             excludedActions: [],
             firstHeader: 'h3',
             forcePlainText: true,
+            placeholder: 'Type your text',
             secondHeader: 'h4'
         },
 
@@ -96,6 +95,7 @@ function MediumEditor(elements, options) {
                        .bindButtons()
                        .bindAnchorForm()
                        .bindPaste()
+                       .setPlaceholders()
                        .bindWindowActions();
         },
 
@@ -103,6 +103,9 @@ function MediumEditor(elements, options) {
             var i;
             for (i = 0; i < this.elements.length; i += 1) {
                 this.elements[i].setAttribute('contentEditable', true);
+                if (!this.elements[i].getAttribute('data-placeholder')) {
+                    this.elements[i].setAttribute('data-placeholder', this.options.placeholder);
+                }
                 this.bindParagraphCreation(this.elements[i]);
             }
             return this;
@@ -191,10 +194,19 @@ function MediumEditor(elements, options) {
         },
 
         setToolbarPosition: function () {
-            var selection = window.getSelection(),
+            var buttonHeight = 50,
+                selection = window.getSelection(),
                 range = selection.getRangeAt(0),
                 boundary = range.getBoundingClientRect();
-            this.toolbar.style.top = boundary.top + this.options.diffTop + window.pageYOffset - this.toolbar.offsetHeight + 'px';
+            if (boundary.top < buttonHeight) {
+                this.toolbar.classList.add('medium-toolbar-arrow-over');
+                this.toolbar.classList.remove('medium-toolbar-arrow-under');
+                this.toolbar.style.top = buttonHeight + boundary.bottom - this.options.diffTop + window.pageYOffset - this.toolbar.offsetHeight + 'px';
+            } else {
+                this.toolbar.classList.add('medium-toolbar-arrow-under');
+                this.toolbar.classList.remove('medium-toolbar-arrow-over');
+                this.toolbar.style.top = boundary.top + this.options.diffTop + window.pageYOffset - this.toolbar.offsetHeight + 'px';
+            }
             this.toolbar.style.left = ((boundary.left + boundary.right) / 2) - (this.toolbar.offsetWidth / 2) + (this.options.diffLeft) + 'px';
             return this;
         },
@@ -204,8 +216,7 @@ function MediumEditor(elements, options) {
                 i;
 
             for (i = 0; i < buttons.length; i += 1) {
-                buttons[i].className = buttons[i].className.replace(/medium-editor-button-active/g, '')
-                                                           .replace(/\s{2}/g, ' ');
+                buttons[i].classList.remove('medium-editor-button-active');
                 this.showHideButton(buttons[i]);
             }
 
@@ -251,8 +262,7 @@ function MediumEditor(elements, options) {
                         self.checkSelection(e);
                     }
                     if (this.className.indexOf('medium-editor-button-active') > -1) {
-                        this.className = this.className.replace(/medium-editor-button-active/g, '')
-                                             .replace(/\s{2}/g, ' ');
+                        this.classList.remove('medium-editor-button-active');
                     } else {
                         this.className += ' medium-editor-button-active';
                     }
@@ -385,6 +395,7 @@ function MediumEditor(elements, options) {
             });
 
             linkCancel.addEventListener('click', function (e) {
+                e.preventDefault();
                 self.showToolbarActions();
                 restoreSelection(self.savedSelection);
             });
@@ -445,6 +456,7 @@ function MediumEditor(elements, options) {
             }
             var i,
                 pasteWrapper = function (e) {
+                    e.target.classList.remove('medium-editor-placeholder');
                     if (e.clipboardData && e.clipboardData.getData) {
                         e.preventDefault();
                         document.execCommand('insertHTML', false, e.clipboardData.getData('text/plain').replace(/[\r\n]/g, '<br>'));
@@ -452,6 +464,28 @@ function MediumEditor(elements, options) {
                 };
             for (i = 0; i < this.elements.length; i += 1) {
                 this.elements[i].addEventListener('paste', pasteWrapper);
+            }
+            return this;
+        },
+
+        setPlaceholders: function () {
+            var i,
+                activatePlaceholder = function (el) {
+                    if (el.textContent.replace(/^\s+|\s+$/g, '') === '') {
+                        el.innerHTML = '';
+                        el.classList.add('medium-editor-placeholder');
+                    }
+                },
+                placeholderWrapper = function (e) {
+                    this.classList.remove('medium-editor-placeholder');
+                    if (e.type !== 'keypress') {
+                        activatePlaceholder(this);
+                    }
+                };
+            for (i = 0; i < this.elements.length; i += 1) {
+                activatePlaceholder(this.elements[i]);
+                this.elements[i].addEventListener('focusout', placeholderWrapper);
+                this.elements[i].addEventListener('keypress', placeholderWrapper);
             }
             return this;
         }

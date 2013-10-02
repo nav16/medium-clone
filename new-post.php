@@ -10,7 +10,7 @@ protect_page();
 <link href="css/new-post.css" rel="stylesheet" type="text/css" media="screen">
 
 	<script src="/medium/js/jquery.min.js"></script>
-<script type="text/javascript" src="/medium/js/jQuery.divPlaceholder.js"></script>
+
 </head>
 <?php $prop = md5(time());?>
 

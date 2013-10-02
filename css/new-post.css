@@ -1236,26 +1236,6 @@ color: #CE0E0E;
 .default-value>p {
 color: #b3b3b1;
 }
-
-div[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
-    content: attr(data-placeholder);   
-	color: #b3b3b1;
-}
-
-p[data-placeholder]:not(:focus):not([data-p-placeholder-content]):before {
-    content: attr(data-placeholder);   
-	color: #b3b3b1;
-}
-
-h1[data-placeholder]:not(:focus):not([data-h1-placeholder-content]):before {
-    content: attr(data-placeholder);   
-	color: #b3b3b1;
-}
-
-h2[data-placeholder]:not(:focus):not([data-h2-placeholder-content]):before {
-    content: attr(data-placeholder);   
-	color: #b3b3b1;
-}
 .error{
 
 
