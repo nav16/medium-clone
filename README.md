@@ -16,10 +16,8 @@ __Inline Editor:__ https://github.com/daviferreira/medium-editor
 ![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/post.jpg)
 ![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/post-edit.jpg)
 
-__Placeholder:__ https://github.com/sprucemedia/jQuery.divPlaceholder.js
-
 ![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/new-post.jpg)
-![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/new-post-palceholder.jpg)
+![screenshot](https://raw.github.com/imnpandey/medium-clone/master/demo-images/new-post-placeholder1.jpg)
 
 __Design:__ Copied from Medium (to save time)
 __Time__ into project I guess its around 24 - 48 hrs mainly took time to copy the design.
