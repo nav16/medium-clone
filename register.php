@@ -17,7 +17,7 @@ if (empty($_POST) === false) {
             if (user_exists($_POST['username']) === true) {
                 $errors[] = 'Sorry, the username \'' . $_POST['username'] . '\' is already taken.';
             }
-            if (preg_match("/^[a-zA-Z0-9]+_?[a-zA-Z0-9]+$/D", $_POST['username']) == true) {
+            if (!preg_match("/^[a-zA-Z0-9]+_?[a-zA-Z0-9]+$/D", $_POST['username']) == true) {
 //                $regular_expression = preg_match("/\\s/", $_POST['username']);
 //                var_dump($regular_expression);
                 $errors[] = 'Your username must contain only alphabets and digits';
