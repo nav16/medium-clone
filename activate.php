@@ -23,7 +23,7 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
     if (empty($errors) === false) {
     ?>
         <h2>Oops...</h2>
-    <?php
+<?php
         echo output_errors($errors);
     } else {
         header('Location: activate.php?success');
