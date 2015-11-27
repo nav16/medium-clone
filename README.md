@@ -5,7 +5,7 @@ This is a clone/copy of [medium.com](https://medium.com).
 It gives the medium's some functionality in dirty way.
 
 
-__demo__: [http://blog.iteching.info](http://blog.iteching.info)
+__demo__: [http://blog.navneetpandey.com](http://blog.navneetpandey.com)
 
 ## Features
 
